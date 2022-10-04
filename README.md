@@ -29,7 +29,19 @@ sudo apt install docker-ce
 
     ```bash
     git clone https://github.com/LinkestK/geonode_pfc_2.git -b main
-    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+    
+    ## Criar ambiente virtual
+    mkdir .virtualenv
+    pip3 install virtualenv
+    pip3 install virtualenvwrapper
+    
+    ## Alterar configurações do virtualenvwrapper
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    export WORKON_HOME=$HOME/.virtualenvs
+    export VIRTUALENVWRAPPER_VIRTUALENV=/home/your_username/.local
+    /bin/virtualenv
+    source ~/.local/bin/virtualenvwrapper.sh 
+    
     mkvirtualenv --python=/usr/bin/python3 geonode_ime
     pip install Django==2.2.15
 
@@ -42,15 +54,11 @@ sudo apt install docker-ce
 
     ```bash
     sudo docker-compose build --no-cache
+    set COMPOSE_CONVERT_WINDOWS_PATHS=1
     sudo docker-compose up -d
     ```
 
-    ```bash
-    set COMPOSE_CONVERT_WINDOWS_PATHS=1
-    ```
-
-    antes de executar `docker-compose up`
-
+   
 3. Acesse o site do projeto no link: http://localhost/
 
 
