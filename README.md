@@ -28,6 +28,7 @@ sudo apt install docker-ce
 1. Preparar o ambiente de instalação
 
     ```bash
+    ## Clonar o repositório
     git clone https://github.com/LinkestK/geonode_pfc_2.git -b main
     
     ## Criar ambiente virtual
